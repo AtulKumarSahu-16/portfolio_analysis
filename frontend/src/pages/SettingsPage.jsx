@@ -1,0 +1,8 @@
+import { useAuth } from '../app/AuthContext.jsx'
+import { usePortfolio } from '../app/PortfolioContext.jsx'
+
+export default function SettingsPage() {
+  const { user } = useAuth()
+  const { portfolios, activePortfolio } = usePortfolio()
+  return <div className="workspace-page"><div className="page-title"><div><span className="eyebrow">ACCOUNT & DATA</span><h1>Settings</h1><p>Review your signed-in account, active portfolio, and market-data configuration.</p></div></div><section className="settings-grid"><article className="content-card"><span className="eyebrow">ACCOUNT</span><h2>Profile</h2><dl><div><dt>Name</dt><dd>{user?.display_name || 'Not provided'}</dd></div><div><dt>Email</dt><dd>{user?.email || 'Not available'}</dd></div><div><dt>Session</dt><dd>Protected HttpOnly cookie</dd></div></dl></article><article className="content-card"><span className="eyebrow">PORTFOLIOS</span><h2>Your workspace</h2><dl><div><dt>Portfolio count</dt><dd>{portfolios.length}</dd></div><div><dt>Active portfolio</dt><dd>{activePortfolio?.name || 'None selected'}</dd></div></dl><p className="note">Portfolio transactions are private to your signed-in account. Portfolio deletion is not currently available in the app.</p></article><article className="content-card"><span className="eyebrow">MARKET DATA</span><h2>Provider configuration</h2><dl><div><dt>IndianAPI</dt><dd>Available when a key and eligible plan are configured on the backend</dd></div><div><dt>MFNAV</dt><dd>Public endpoints · fund search and NAV data</dd></div><div><dt>Credential storage</dt><dd>Backend environment only</dd></div></dl><p className="note">API key values are never sent to the browser. Contact your developer to change server configuration.</p></article></section></div>
+}

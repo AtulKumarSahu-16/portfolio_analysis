@@ -1,0 +1,10 @@
+.import-scheme-fields{display:grid;gap:5px;min-width:220px}
+.import-scheme-fields label{display:grid;gap:2px;color:#71829a;font-size:8px;text-transform:uppercase;letter-spacing:.03em}
+.import-review-table td:nth-child(2) .import-scheme-fields input{width:100%;min-width:200px;text-transform:none;letter-spacing:normal;font-size:10px}
+.import-review-table td:nth-child(3) select{display:block;width:220px;max-width:220px;margin-top:5px}
+.import-review-table .import-nav-source{font-size:8px;color:#71829a}
+.import-review-table{min-width:1700px}
+.import-review-table th:first-child,.import-review-table td:first-child{position:sticky;left:0;z-index:2;min-width:105px;background:#fff}
+.import-review-table th:nth-child(2),.import-review-table td:nth-child(2){position:sticky;left:105px;z-index:2;min-width:190px;background:#fff}
+.import-review-table th:first-child,.import-review-table th:nth-child(2){z-index:4;background:#f7f9fc}
+.import-review-table .review-warning td:first-child,.import-review-table .review-warning td:nth-child(2){background:#fffbef}
